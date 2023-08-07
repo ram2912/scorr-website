@@ -1,10 +1,98 @@
+import { useState, useEffect, useRef } from "react";
 import Button from "./Button";
 import BannerImage from "./BannerImage";
+import WorkEmailInput from "./EmailForm";
+import axios from "axios";
+
+interface WorkEmailInputProps {
+  onSubmit: (email: string) => void;
+}
+
+
 
 export default function Hero() {
+  const [animationIndex, setAnimationIndex] = useState(0);
+  const animations = ["pipeline risk", "churn", "sales forecasting"];
+  
+  const typingRef = useRef<HTMLSpanElement | null>(null);
+  const [isTyping, setIsTyping] = useState(false);
+  const [successMessage, setSuccessMessage] = useState("");
+
+
+
+  const handleEmailSubmit = (email: string) => {
+    const apiUrl = "http://testback.scorr-app.eu/users/web-signups";
+  
+    fetch(apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ email }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data.message);
+        setSuccessMessage('Thank you for signing up! We will be in touch soon.');
+      })
+      .catch((error) => {
+        console.error("Error storing email:", error);
+      });
+  };
+  
+
+  // Function to change text at regular intervals
+  const changeAnimation = () => {
+    setAnimationIndex((prevIndex) => (prevIndex + 1) % animations.length);
+    setIsTyping(false);
+  };
+
+  // Start the text rotation interval when the component mounts
+  useEffect(() => {
+    const interval = setInterval(changeAnimation, 3000); // Change text every 3 seconds
+
+    // Clean up the interval when the component unmounts
+    return () => clearInterval(interval);
+  }, []);
+  // Typing animation effect
+  useEffect(() => {
+    if (!typingRef.current || !isTyping) return;
+
+    const text = animations[animationIndex];
+    let currentText = "";
+    let index = 0;
+
+    const typingInterval = setInterval(() => {
+      if (index <= text.length) {
+        currentText = text.slice(0, index);
+        typingRef.current!.textContent = currentText;
+        index++;
+      } else {
+        clearInterval(typingInterval);
+      }
+    }, 100); // Typing speed in milliseconds
+
+    return () => clearInterval(typingInterval);
+  }, [animationIndex, isTyping]);
+
+
+  useEffect(() => {
+    // Show the text after a short delay to avoid the initial flash
+    const timeout = setTimeout(() => {
+      setIsTyping(true);
+    }, 100);
+
+    return () => clearTimeout(timeout);
+  }, [animationIndex]);
+
   return (
     <>
-      <section className="relative pb-28 sm:pb-48 md:pb-56 xl:pb-80 max-h-[52rem] overflow-hidden">
+      <section className="relative pb-28 sm:pb-48 md:pb-56 xl:pb-50 max-h-[70rem] overflow-hidden" >
         <div className="pointer-events-none full-size bg-primary -z-[1]"></div>
         <div
           className={[
@@ -108,47 +196,47 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <article className="container text-center pt-28 md:pt-32 xl:pt-40">
+        <article className="container text-left pt-28 md:pt-32 xl:pt-40">
           <h2 className="text-white !font-bold text-3xl sm:text-4xl lg:text-6xl">
-            Managing your crypto portfolio
+            How much revenue are you losing 
             <br />
-            has never been easier
+            without predictive insights?
           </h2>
-          <p className="text-white text-sm md:text-base lg:text-xl !font-light lg:tracking-[0] mt-8 px-10 lg:px-0">
-            End-to-end payments and financial management in a single solution.
-            Meet
+        <p className="text-white text-sm md:text-base lg:text-xl !font-light lg:tracking-[0] mt-8 px-10 lg:px-0">
+            In a downturn- losing customers or deals because you acted too late is not an option.
             <br />
-            the right platform to help realize.
+            With SCORR anyone can leverage AI to predict{" "}
+            {isTyping && ( // Only show the text when the typing animation is in progress
+              <span
+                ref={typingRef}
+                style={{
+                  borderBottom: "2px solid orange",
+                  color: "orange",
+                  
+
+                }}
+              />
+            )}
+            {isTyping ? "" : animations[animationIndex]} {/* Hide the completed word during animation */}
+            in minutes.
           </p>
-          <div className="mt-10 md:mt-14 flex gap-3 sm:gap-8 md:gap-12 justify-center whitespace-nowrap origin-top scale-75 md:scale-100">
-            <Button href="#" bgColor="orange" rounded="rounded-full">
-              Get Started
-            </Button>
-            <button className="!font-light text-white text-base flex items-center gap-3">
-              <span className="h-15 w-15 hover:scale-75 transition-transform shrink-0 rounded-full bg-green text-white text-base flex justify-center items-center">
-                <svg
-                  className="pl-[2px] w-[1.88rem] h-[1.88rem]"
-                  width="0"
-                  height="0"
-                  viewBox="0 0 24 24"
-                  fill="currentColor"
-                >
-                  <path
-                    d="M6 12.0002V9.33017C6 6.02017 8.35 4.66017 11.22 6.32017L13.53 7.66017L15.84 9.00017C18.71 10.6602 18.71 13.3702 15.84 15.0302L13.53 16.3702L11.22 17.7102C8.35 19.3402 6 17.9902 6 14.6702V12.0002Z"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </span>
-              See How It Works
-            </button>
-          </div>
+          <p className="text-white text-xs md:text-sm lg:text-base !font-light lg:tracking-[0] mt-15 px-10 lg:px-0">
+            Join the waitlist and be the first to get access.
+          </p>
+          
+          <WorkEmailInput onSubmit={handleEmailSubmit} />
+          {successMessage && (
+        <div className="success-message" style={{paddingTop:'10px'}}>
+          <img
+            src="Emoji_u1f389.svg.png" // Replace with the path to your celebration logo image or animated SVG
+            alt="Celebration logo"
+            className="w-6 h-6 mr-2 animate-celebration-logo"
+          />
+          <p className=" animate-success-message">{successMessage}</p>
+        </div>
+        )}
         </article>
       </section>
-
-      <BannerImage />
     </>
   );
 }

@@ -29,67 +29,12 @@ export default function Header() {
             className="block uppercase text-white !font-black text-base sm:text-xl"
             href="/"
           >
-            Crypto Fin
+            <img src="/White logo - no background copy.png" alt="logo" className="h-8" />
           </Link>
           <nav aria-label="primary navigation" className="hidden md:block h-full">
-            <ul className="flex justify-center items-center gap-x-6 lg:gap-x-8 text-white text-sm h-full">
-              <li className="group h-full flex flex-col justify-center">
-                <Link href="#">
-                  Product{" "}
-                  <ChevronDown className="w-2 h-2 inline ml-2 mb-[2px]" />
-                </Link>
-                <div className="bg-white hidden group-hover:block absolute top-[3.25rem] shadow-[0_8px_20px_rgb(50_12_192_/_20%)]">
-                  <ul className="flex flex-col">
-                    {[...Array(5)].map((_, i) => (
-                      <li
-                        className="text-gray-800 hover:bg-gray-100 transition-colors whitespace-nowrap w-[15.5rem]"
-                        key={i}
-                      >
-                        <Link className="py-2 px-4 block" href="#">Product Item {i + 1}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
-              <li className="group h-full flex flex-col justify-center">
-                <Link href="#">
-                  Template{" "}
-                  <ChevronDown className="w-2 h-2 inline ml-2 mb-[2px]" />
-                </Link>
-                <div className="bg-white hidden group-hover:block absolute top-[3.25rem] shadow-[0_8px_20px_rgb(50_12_192_/_20%)]">
-                  <ul className="flex flex-col">
-                    {[...Array(3)].map((_, i) => (
-                      <li
-                        className="text-gray-800 hover:bg-gray-100 transition-colors whitespace-nowrap w-[15.5rem]"
-                        key={i}
-                      >
-                        <Link className="py-2 px-4 block" href="#">Template Item {i + 1}</Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
-              <li>
-                <Link href="#">Blog</Link>
-              </li>
-              <li>
-                <Link href="#">Pricing</Link>
-              </li>
-            </ul>
+           
           </nav>
-          <div className="hidden md:block">
-            <Link className="text-white text-sm mr-6 lg:mr-12" href="/">
-              Sign In
-            </Link>
-            <Button
-              href="#"
-              bgColor="orange"
-              rounded={isSticky ? "rounded-0" : "rounded-lg"}
-              className="h-[3.25rem]"
-            >
-              Start Free
-            </Button>
-          </div>
+          
           <button
             aria-label="open navigation menu"
             onClick={() => setIsOpen(true)}

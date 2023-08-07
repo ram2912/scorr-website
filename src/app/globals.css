@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --bg-color: #fafbff;
+  --bg-color: #000000;
 }
 
 @layer base {
@@ -24,6 +24,7 @@
     @apply overflow-x-hidden overscroll-x-none min-h-screen;
   }
 }
+
 
 @layer utilities {
   .full-size {
@@ -102,3 +103,45 @@
     transform: translate3d(4px, 0, 0);
   }
 }
+
+/* Add these CSS animations to your stylesheets */
+
+/* Animation for the celebration logo */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Animation for the success message */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.success-message {
+  color: #ffffff;
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  margin-top: 10px;
+}
+
+.animate-celebration-logo {
+  animation: bounceIn 1s;
+}
+
+.animate-success-message {
+  animation: fadeInOut 2s ease-in-out;
+}
+

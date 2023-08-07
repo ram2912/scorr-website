@@ -1,29 +1,29 @@
-import Link from "next/link";
+import { type } from "os";
 import { ReactNode } from "react";
 
 export default function Button({
-  href,
+  onClick,
   children,
   bgColor = "purple",
   rounded = "rounded-lg",
   className = "",
-  onClick,
+  height = "h-15", // Default height
 }: ButtonProps) {
   return (
-    <Link
+    <button
+      onClick={onClick}
       className={[
-        "inline-flex justify-center text-base px-5 sm:px-[calc(1.9rem_+_0.5vw)] transition-colors",
+        "inline-flex justify-center text-base px-3 sm:px-[calc(1.9rem_+_0.5vw)] transition-colors",
         "text-white hover:text-gray-100",
-        "items-center h-15 py-2 capitalize whitespace-nowrap",
+        "items-center py-2 capitalize whitespace-nowrap",
         bgColors[bgColor],
         rounded,
-        className
+        className,
       ].join(" ")}
-      href={href}
-      onClick={onClick}
+      style={{ height }}
     >
       {children}
-    </Link>
+    </button>
   );
 }
 
@@ -34,10 +34,11 @@ const bgColors: Record<Exclude<ButtonProps["bgColor"], undefined>, string> = {
 };
 
 interface ButtonProps {
-  href: string;
+  onClick?: () => void;
   children: string | ReactNode;
+  type?: "button" | "submit" | "reset";
   bgColor?: "orange" | "primary" | "purple";
   rounded?: string;
   className?: string;
-  onClick?: () => void;
+  height?: string; // You can use any valid tailwind CSS height classes here
 }
