@@ -16,7 +16,7 @@ export default function ValuePropositions() {
           End-to-end payments and financial management in a single solution.
           Meet the right platform to help realize.
         </p>
-        <Button className="mt-9" href="#" bgColor="purple">
+        <Button className="mt-9" bgColor="purple">
           Read More
         </Button>
       </article>
@@ -34,7 +34,7 @@ export default function ValuePropositions() {
           End-to-end payments and financial management in a single solution.
           Meet the right platform to help realize.
         </p>
-        <Button className="mt-9" href="#" bgColor="purple">
+        <Button className="mt-9"  bgColor="purple">
           Read More
         </Button>
       </article>
