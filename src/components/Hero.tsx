@@ -21,7 +21,7 @@ export default function Hero() {
 
 
   const handleEmailSubmit = (email: string) => {
-    const apiUrl = "http://testback.scorr-app.eu/users/web-signups";
+    const apiUrl = "https://testback.scorr-app.eu/users/web-signups";
   
     fetch(apiUrl, {
       method: "POST",
