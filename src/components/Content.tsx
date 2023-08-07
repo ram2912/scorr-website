@@ -56,7 +56,7 @@ export default function Content() {
             active enable to.
           </p>
           <Button
-            href="#"
+            
             rounded="rounded-md"
             bgColor="primary"
             className="self-start"
@@ -83,7 +83,7 @@ export default function Content() {
             active enable to.
           </p>
           <Button
-            href="#"
+           
             rounded="rounded-md"
             bgColor="primary"
             className="self-start"

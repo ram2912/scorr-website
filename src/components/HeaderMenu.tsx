@@ -89,7 +89,7 @@ const HeaderMenu = ({ onClose }: { onClose: () => void }) => {
           <Link href="#">Sign In</Link>
         </li>
         <li>
-          <Button href="#" bgColor="orange" rounded="rounded-lg">
+          <Button  bgColor="orange" rounded="rounded-lg">
             Start Free
           </Button>
         </li>
