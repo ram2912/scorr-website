@@ -14,7 +14,7 @@ export default function Feature() {
             <br />
             yet melancholy but end appearance
           </h2>
-          <Button href="#" bgColor="orange">
+          <Button  bgColor="orange">
             Get Started Now
           </Button>
         </header>
