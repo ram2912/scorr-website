@@ -127,7 +127,7 @@ export default function Privacy() {
         Last Updated: 2023-08-08.
             </p>
             <p className="text-black text-sm md:text-base lg:text-xl !font-light lg:tracking-[0] mt-8 px-10 lg:px-0">
-         Welcome to scorr.ai ('us,' 'we,'' or 'our'). These Terms of Use ('Terms') govern your access to and use of our website [https://www.scorr.ai/] (the 'Site'). Please read these Terms carefully before using the Site. By accessing or using the Site, you agree to these Terms.
+            Welcome to scorr.ai (&quot;us,&quot; &quot;we,&quot; or &quot;our&quot;). These Terms of Use (&quot;Terms&quot;) govern your access to and use of our website [https://www.scorr.ai/] (the &quot;Site&quot;). Please read these Terms carefully before using the Site. By accessing or using the Site, you agree to these Terms.
 
             </p>
             <p className="text-black text-sm md:text-base lg:text-xl !font-light lg:tracking-[0] mt-8 px-10 lg:px-0">
@@ -152,7 +152,7 @@ export default function Privacy() {
             Intellectual Property
 
             </h3 >
-            All content on the Site, including text, graphics, images, videos, and software, is the property of scorr.ai or its licensors and is protected by copyright and other intellectual property laws. You may not reproduce, modify, distribute, or display any content from the Site without our prior written consent.
+            All content on the Site, including text, graphics, images, videos, and software, is the property of [Website Name] or its licensors and is protected by copyright and other intellectual property laws. You may not reproduce, modify, distribute, or display any content from the Site without our prior written consent.
 
             </p>
             <p className="text-black text-sm md:text-base lg:text-xl !font-light lg:tracking-[0] mt-8 px-10 lg:px-0">
@@ -165,7 +165,7 @@ export default function Privacy() {
             <h3 className="text-black !font-bold text-xl sm:text-2xl lg:text-2xl">
                 Disclaimer of Warranties
                 </h3>
-                The Site is provided 'as is.' We disclaim all warranties, express or implied, including warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that the Site will be uninterrupted or error-free, that defects will be corrected, or that the Site is free of viruses or other harmful components. You assume the entire cost of any necessary servicing, repair, or correction of your property or operations as a result of using the Site.
+                The Site is provided &quot;as is.&quot; We disclaim all warranties, express or implied, including warranties of merchantability, fitness for a particular purpose, and non-infringement. We do not warrant that the Site will be uninterrupted or error-free, that defects will be corrected, or that the Site is free of viruses or other harmful components. You assume the entire cost of any necessary servicing, repair, or correction of your property or operations as a result of using the Site.
                 </p>
                 <p className="text-black text-sm md:text-base lg:text-xl !font-light lg:tracking-[0] mt-8 px-10 lg:px-0">
             <h3 className="text-black !font-bold text-xl sm:text-2xl lg:text-2xl">
