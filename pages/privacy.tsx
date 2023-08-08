@@ -1,4 +1,4 @@
-'use client';
+
 import Hero from "@/components/Hero";
 import Related from "@/components/Related";
 import Content from "@/components/Content";

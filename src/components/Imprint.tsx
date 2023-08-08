@@ -1,14 +1,8 @@
-import { useState, useEffect, useRef } from "react";
-import Button from "./Button";
-import BannerImage from "./BannerImage";
-import WorkEmailInput from "./EmailForm";
-import axios from "axios";
+import React from "react";
 
 interface WorkEmailInputProps {
   onSubmit: (email: string) => void;
 }
-
-
 
 export default function Imprint() {
  
