@@ -196,13 +196,13 @@ export default function Hero() {
             </div>
           </div>
         </div>
-        <article className="container text-left pt-28 md:pt-32 xl:pt-40">
-          <h2 className="text-black !font-bold text-3xl sm:text-4xl lg:text-6xl lg:tracking-[0] mt-1 px-5 lg:px-0">
-            You lose millions of revenue 
+        <article className="container text-left pt-27 md:pt-32 xl:pt-40">
+          <h2 className="text-black !font-bold text-2xl sm:text-4xl lg:text-6xl lg:tracking-[0] mt-12  px-5 lg:px-0">
+            You lose millions of revenue by
             <br />
-            by taking actions too late.
+             taking actions too late.
           </h2>
-        <p className="text-black text-sm md:text-base lg:text-xl !font-medium lg:tracking-[0] mt-5 px-5 lg:px-0">
+        <p className="text-black text-sm md:text-base lg:text-xl !font-medium lg:tracking-[0] mt-3 px-5 lg:px-0">
             Predictive insights are the key to saving customers, securing deals and driving revenue.
             <br />
             With SCORR anyone can leverage AI to predict{" "}
