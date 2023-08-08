@@ -34,22 +34,11 @@ export default function Header() {
           <nav aria-label="primary navigation" className="hidden md:block h-full">
            
           </nav>
-          
-          <button
-            aria-label="open navigation menu"
-            onClick={() => setIsOpen(true)}
-            className="md:hidden"
-          >
-            <HamburgerMenu />
-          </button>
+      
         </div>
       </header>
 
-      {isOpen && (
-        <Suspense>
-          <HeaderMenu onClose={() => setIsOpen(false)} />
-        </Suspense>
-      )}
+     
     </>
   );
 }

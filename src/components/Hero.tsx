@@ -101,7 +101,7 @@ export default function Hero() {
            
           ].join(" ")}
         >
-          <div className="full-size top-0 hidden md:block">
+          <div className="full-size top-0 ">
             <div className="container relative">
               <div className="[clip-path:polygon(0_0,100%_0,100%_100%,0_65%)] w-[6.2rem] sm:w-[7.3rem] h-32 bg-[#8FD0FF16] absolute left-3 top-0"></div>
             </div>
@@ -197,7 +197,7 @@ export default function Hero() {
           </div>
         </div>
         <article className="container text-left pt-28 md:pt-32 xl:pt-40">
-          <h2 className="text-black !font-bold text-3xl sm:text-4xl lg:text-6xl">
+          <h2 className="text-black !font-bold text-3xl sm:text-4xl lg:text-6xl lg:tracking-[0] mt-8 px-10 lg:px-0">
             You lose millions of revenue every year
             <br />
             by taking actions too late.
