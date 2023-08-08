@@ -197,12 +197,12 @@ export default function Hero() {
           </div>
         </div>
         <article className="container text-left pt-28 md:pt-32 xl:pt-40">
-          <h2 className="text-black !font-bold text-3xl sm:text-4xl lg:text-6xl lg:tracking-[0] mt-8 px-10 lg:px-0">
-            You lose millions of revenue every year
+          <h2 className="text-black !font-bold text-3xl sm:text-4xl lg:text-6xl lg:tracking-[0] mt-1 px-5 lg:px-0">
+            You lose millions of revenue 
             <br />
             by taking actions too late.
           </h2>
-        <p className="text-black text-sm md:text-base lg:text-xl !font-medium lg:tracking-[0] mt-8 px-10 lg:px-0">
+        <p className="text-black text-sm md:text-base lg:text-xl !font-medium lg:tracking-[0] mt-5 px-5 lg:px-0">
             Predictive insights are the key to saving customers, securing deals and driving revenue.
             <br />
             With SCORR anyone can leverage AI to predict{" "}
@@ -220,7 +220,7 @@ export default function Hero() {
             {isTyping ? "" : animations[animationIndex]} {/* Hide the completed word during animation */}
             in minutes.
           </p>
-          <p className="text-black text-xs md:text-sm lg:text-base !font-medium lg:tracking-[0] mt-15 px-10 lg:px-0">
+          <p className="text-black text-xs md:text-sm lg:text-base !font-medium lg:tracking-[0] mt-15 px-5 lg:px-0">
             Join the waitlist and be the first to get access.
           </p>
           

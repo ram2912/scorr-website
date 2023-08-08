@@ -42,7 +42,7 @@ const WorkEmailInput: React.FC<WorkEmailInputProps> = ({ onSubmit }) => {
   };
 
   return (
-    <form className="mt-5 px-10 lg:px-0" onSubmit={handleSubmit}>
+    <form className="mt-5 px-5 lg:px-0" onSubmit={handleSubmit}>
       <div className="grid grid-cols-12 gap-3">
         <input
           type="email"
