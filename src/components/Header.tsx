@@ -21,7 +21,7 @@ export default function Header() {
         className={`fixed [--small:0] md:[--small:1] w-full h-[3.25rem] ${
           isSticky && "bg-gray-200 transition-colors"
         } z-20 whitespace-nowrap ${
-          isSticky ? "shadow-[0_8px_20px_rgb(50_12_192_/_30%)]" : ""
+          isSticky ? "shadow-[0_8px_20px_rgb(0_54_95_/_30%)]" : ""
         }`}
       >
         <div className="container flex justify-between items-center h-full">
