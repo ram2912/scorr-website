@@ -6,16 +6,19 @@ import Feature from "@/components/Feature";
 import GDPRFeature from "@/components/GDPRFeature";
 import ValuePropositions from "@/components/ValuePropositions";
 import Blog from "@/components/Blog";
+import Imprint from "@/components/Imprint";
+import RootLayout from "@/app/layout";
+
 
 const title = "SCORR | Revenue Intelligence";
 const description =
-  "No code ML for revenue operations. Take control of your revenue predictions using SCORR.";
+  "End-to-end payments and financial management in a single solution. Meet the right platform to help realize.";
 const author = "Shriram Pawar";
 const keywords =
-  "Saas, startup, next.js, react, revenue, intelligence, AI, ales, landing-page, fin-tech, finance".split(
+  "Saas, startup, next.js, react, crypto, wallet, bitcoin, blockchain, landing-page, fin-tech, finance".split(
     ", "
   );
-const url = "https://www.scorr.ai";
+const url = "https://crypto-finance.vercel.app";
 
 export const metadata = {
   title,
@@ -43,10 +46,12 @@ export const metadata = {
   },
 };
 
-export default function Home() {
+export default function ImprintPage() {
   return (
+    <RootLayout>
     <>
-      <Hero />
+      <Imprint />
     </>
+    </RootLayout>
   );
 }

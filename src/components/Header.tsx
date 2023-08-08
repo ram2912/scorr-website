@@ -19,7 +19,7 @@ export default function Header() {
       <header
         style={{ top: `calc(${top}px * var(--small))` }}
         className={`fixed [--small:0] md:[--small:1] w-full h-[3.25rem] ${
-          isSticky && "bg-primary transition-colors"
+          isSticky && "bg-gray-200 transition-colors"
         } z-20 whitespace-nowrap ${
           isSticky ? "shadow-[0_8px_20px_rgb(50_12_192_/_30%)]" : ""
         }`}
@@ -29,7 +29,7 @@ export default function Header() {
             className="block uppercase text-white !font-black text-base sm:text-xl"
             href="/"
           >
-            <img src="/White logo - no background copy.png" alt="logo" className="h-8" />
+            <img src="/Black logo - no background.png" alt="logo" className="h-8" />
           </Link>
           <nav aria-label="primary navigation" className="hidden md:block h-full">
            

@@ -10,12 +10,12 @@ export default function Footer() {
           <img src="/White logo - no background copy.png" alt="logo" className="h-8" style={{marginBottom:'15px'}} />
           &copy; {new Date().getFullYear()} SCORR UG. All rights reserved.
           &mdash;{" "}
-          <Link href="/" className="hover:underline">
-            Privacy Policy
+          <Link href="/imprint" className="hover:underline">
+            Imprint
           </Link>{" "}
           &bull;{" "}
-          <Link href="/" className="hover:underline">
-            Terms of Services
+          <Link href="/privacy" className="hover:underline">
+            Privacy Policy
           </Link>
         </p>
       

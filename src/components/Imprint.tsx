@@ -10,89 +10,12 @@ interface WorkEmailInputProps {
 
 
 
-export default function Hero() {
-  const [animationIndex, setAnimationIndex] = useState(0);
-  const animations = ["pipeline risk", "churn", "sales forecasting"];
-  
-  const typingRef = useRef<HTMLSpanElement | null>(null);
-  const [isTyping, setIsTyping] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
-
-
-
-  const handleEmailSubmit = (email: string) => {
-    const apiUrl = "https://testback.scorr-app.eu/users/web-signups";
-  
-    fetch(apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data.message);
-        setSuccessMessage('Thank you for signing up! We will be in touch soon.');
-      })
-      .catch((error) => {
-        console.error("Error storing email:", error);
-      });
-  };
-  
-
-  // Function to change text at regular intervals
-  const changeAnimation = () => {
-    setAnimationIndex((prevIndex) => (prevIndex + 1) % animations.length);
-    setIsTyping(false);
-  };
-
-  // Start the text rotation interval when the component mounts
-  useEffect(() => {
-    const interval = setInterval(changeAnimation, 3000); // Change text every 3 seconds
-
-    // Clean up the interval when the component unmounts
-    return () => clearInterval(interval);
-  }, []);
-  // Typing animation effect
-  useEffect(() => {
-    if (!typingRef.current || !isTyping) return;
-
-    const text = animations[animationIndex];
-    let currentText = "";
-    let index = 0;
-
-    const typingInterval = setInterval(() => {
-      if (index <= text.length) {
-        currentText = text.slice(0, index);
-        typingRef.current!.textContent = currentText;
-        index++;
-      } else {
-        clearInterval(typingInterval);
-      }
-    }, 100); // Typing speed in milliseconds
-
-    return () => clearInterval(typingInterval);
-  }, [animationIndex, isTyping]);
-
-
-  useEffect(() => {
-    // Show the text after a short delay to avoid the initial flash
-    const timeout = setTimeout(() => {
-      setIsTyping(true);
-    }, 100);
-
-    return () => clearTimeout(timeout);
-  }, [animationIndex]);
+export default function Imprint() {
+ 
 
   return (
     <>
-      <section className="relative pb-28 sm:pb-48 md:pb-56 xl:pb-50 max-h-[70rem] overflow-hidden" >
+     <section className="relative pb-28 sm:pb-48 md:pb-56 xl:pb-50 max-h-[70rem] overflow-hidden" >
         <div className="pointer-events-none full-size  -z-[1]"></div>
         <div
           className={[
@@ -198,43 +121,38 @@ export default function Hero() {
         </div>
         <article className="container text-left pt-28 md:pt-32 xl:pt-40">
           <h2 className="text-black !font-bold text-3xl sm:text-4xl lg:text-6xl">
-            You lose millions of revenue every year
-            <br />
-            by taking actions too late.
-          </h2>
-        <p className="text-black text-sm md:text-base lg:text-xl !font-medium lg:tracking-[0] mt-8 px-10 lg:px-0">
-            Predictive insights are the key to saving customers, securing deals and driving revenue.
-            <br />
-            With SCORR anyone can leverage AI to predict{" "}
-            {isTyping && ( // Only show the text when the typing animation is in progress
-              <span
-                ref={typingRef}
-                style={{
-                  borderBottom: "2px solid blue",
-                  color: "blue",
-                  
+            Imprint
+            </h2>
 
-                }}
-              />
-            )}
-            {isTyping ? "" : animations[animationIndex]} {/* Hide the completed word during animation */}
-            in minutes.
-          </p>
-          <p className="text-black text-xs md:text-sm lg:text-base !font-medium lg:tracking-[0] mt-15 px-10 lg:px-0">
-            Join the waitlist and be the first to get access.
-          </p>
-          
-          <WorkEmailInput onSubmit={handleEmailSubmit} />
-          {successMessage && (
-        <div className="success-message" style={{paddingTop:'10px'}}>
-          <img
-            src="Emoji_u1f389.svg.png" // Replace with the path to your celebration logo image or animated SVG
-            alt="Celebration logo"
-            className="w-6 h-6 mr-2 animate-celebration-logo"
-          />
-          <p className=" animate-success-message">{successMessage}</p>
-        </div>
-        )}
+        <p className="text-black text-sm md:text-base lg:text-xl !font-light lg:tracking-[0] mt-8 px-10 lg:px-0">
+        <h3 className="text-black !font-bold text-xl sm:text-2xl lg:text-2xl">
+                Registered Office of the company
+            </h3 >
+           
+        SCORR UG
+            <br />
+Registration Number: HRB 285794
+            <br />
+Adress: Hermine-von-Parish-Str. 44, 81245 München, Deutschland
+
+            </p>
+            <p className="text-black text-sm md:text-base lg:text-xl !font-light lg:tracking-[0] mt-8 px-10 lg:px-0">
+            <h3 className="text-black !font-bold text-xl sm:text-2xl lg:text-2xl">
+                Managing Directors
+            </h3 >
+            
+            Roman Murov
+            <br />
+            Shriram Pawar
+            <br />
+            </p>
+            <p className="text-black text-sm md:text-base lg:text-xl !font-light lg:tracking-[0] mt-8 px-10 lg:px-0">
+            <h3 className="text-black !font-bold text-xl sm:text-2xl lg:text-2xl">
+                Contact
+            </h3 >
+            Email: roman@scorr.eu
+
+            </p>
         </article>
       </section>
     </>

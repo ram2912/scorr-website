@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --bg-color: #000000;
+  --bg-color: #ffffff;
 }
 
 @layer base {
