@@ -92,7 +92,7 @@ export default function Hero() {
 
   return (
     <>
-      <section className="relative pb-28 sm:pb-48 md:pb-56 xl:pb-50 max-h-[70rem] overflow-hidden" >
+      <section className="relative pb-16 sm:pb-48 md:pb-56 xl:pb-50 max-h-[70rem] overflow-hidden mt-8 sm:mt-4" >
         <div className="pointer-events-none full-size  -z-[1]"></div>
         <div
           className={[
